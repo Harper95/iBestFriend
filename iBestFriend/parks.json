@@ -1,8 +1,0 @@
-{
-	"dogParks" : [
-				  {"name": "Big Dry Creek",						   "long": 39.927799, "lat": -105.007628}
-				  {"name": "Westminster Hills Off-Leash Dog Park", "long": 39.888133, "lat": -105.129051}
-				  {"name": "Railyard Dog Park",					   "long": 39.758172, "lat": -105.001576}
-				  {"name": "Run Dog Run Lure Chasing",			   "long": 39.913098, "lat": -105.058265}
-				  ]
-}

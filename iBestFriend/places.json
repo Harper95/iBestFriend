@@ -1,0 +1,14 @@
+{
+	"dog" : {
+		"park": {
+			"Big Dry Creek": {"long": 39.927799, "lat": -105.007628},
+			"Railyard Dog Place": {"long": 39.758172, "lat": -105.001576}
+		},
+		"trail": {
+			"Westminster Hills Off-Leash Dog Place": {"long": 39.888133, "lat": -105.129051}
+		},
+		"activity": {
+			"Run Dog Run Lure Chasing":	{"long": 39.913098, "lat": -105.058265}
+		}
+	}
+}

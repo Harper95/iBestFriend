@@ -10,9 +10,18 @@
 		340102A61C8A485C004C5423 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340102A51C8A485C004C5423 /* SwiftyJSON.framework */; };
 		340102AB1C8A4B11004C5423 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340102A91C8A4B11004C5423 /* Fabric.framework */; };
 		340102AC1C8A4B11004C5423 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340102AA1C8A4B11004C5423 /* Crashlytics.framework */; };
+		3414444B1C91EF7800F5BF43 /* PlaceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3414444A1C91EF7800F5BF43 /* PlaceData.swift */; };
 		3415D65E1C8A2F580089220B /* UserRaing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415D65D1C8A2F580089220B /* UserRaing.swift */; };
 		3415D6621C8A30BD0089220B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415D6611C8A30BD0089220B /* Place.swift */; };
-		3415D6641C8A37BD0089220B /* parks.json in Resources */ = {isa = PBXBuildFile; fileRef = 3415D6631C8A37BD0089220B /* parks.json */; };
+		3415D6641C8A37BD0089220B /* places.json in Resources */ = {isa = PBXBuildFile; fileRef = 3415D6631C8A37BD0089220B /* places.json */; };
+		341DFF2F1C8AA3CF00F5F67F /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341DFF2E1C8AA3CF00F5F67F /* Firebase.framework */; };
+		341DFF311C8AA46700F5F67F /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 341DFF301C8AA46700F5F67F /* libicucore.tbd */; };
+		341DFF331C8AA47300F5F67F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 341DFF321C8AA47300F5F67F /* libc++.tbd */; };
+		341DFF351C8AA47D00F5F67F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341DFF341C8AA47D00F5F67F /* CFNetwork.framework */; };
+		341DFF371C8AA48900F5F67F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341DFF361C8AA48900F5F67F /* Security.framework */; };
+		341DFF391C8AA49800F5F67F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341DFF381C8AA49800F5F67F /* SystemConfiguration.framework */; };
+		341DFF3E1C8AA8EF00F5F67F /* CTHHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DFF3D1C8AA8EF00F5F67F /* CTHHelper.swift */; };
+		344A86AA1C8BF08600EA19E7 /* PlaceToFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344A86A91C8BF08600EA19E7 /* PlaceToFirebase.swift */; };
 		34B00ECD1C881751007918CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00ECC1C881751007918CE /* AppDelegate.swift */; };
 		34B00ECF1C881751007918CE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00ECE1C881751007918CE /* LoginViewController.swift */; };
 		34B00ED21C881751007918CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B00ED01C881751007918CE /* Main.storyboard */; };
@@ -20,11 +29,12 @@
 		34B00EDA1C881751007918CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B00ED81C881751007918CE /* LaunchScreen.storyboard */; };
 		34B00EE51C881751007918CE /* iBestFriendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00EE41C881751007918CE /* iBestFriendTests.swift */; };
 		34B00EF01C881751007918CE /* iBestFriendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00EEF1C881751007918CE /* iBestFriendUITests.swift */; };
-		34B00F021C881DB1007918CE /* ParkListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00F011C881DB1007918CE /* ParkListTableViewController.swift */; };
-		34B00F041C881EA3007918CE /* ParkListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00F031C881EA3007918CE /* ParkListTableViewCell.swift */; };
+		34B00F021C881DB1007918CE /* PlaceListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00F011C881DB1007918CE /* PlaceListTableViewController.swift */; };
+		34B00F041C881EA3007918CE /* PlaceListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00F031C881EA3007918CE /* PlaceListTableViewCell.swift */; };
+		34E7A6921C8BAA79009F68F5 /* PlaceMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7A6911C8BAA79009F68F5 /* PlaceMapViewController.swift */; };
 		34EA231C1C88C29A00EB3FBE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34EA231B1C88C29A00EB3FBE /* MapKit.framework */; };
 		34EA23201C88ECEC00EB3FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34EA231F1C88ECEC00EB3FBE /* Assets.xcassets */; };
-		34EA23221C89006700EB3FBE /* ParkInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EA23211C89006700EB3FBE /* ParkInfoViewController.swift */; };
+		34EA23221C89006700EB3FBE /* PlaceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EA23211C89006700EB3FBE /* PlaceInfoViewController.swift */; };
 		34EA23241C89008200EB3FBE /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EA23231C89008200EB3FBE /* AccountInfoViewController.swift */; };
 		34EA23261C89009C00EB3FBE /* NewPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EA23251C89009C00EB3FBE /* NewPetViewController.swift */; };
 /* End PBXBuildFile section */
@@ -50,9 +60,18 @@
 		340102A51C8A485C004C5423 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		340102A91C8A4B11004C5423 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		340102AA1C8A4B11004C5423 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		3414444A1C91EF7800F5BF43 /* PlaceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceData.swift; sourceTree = "<group>"; };
 		3415D65D1C8A2F580089220B /* UserRaing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRaing.swift; sourceTree = "<group>"; };
 		3415D6611C8A30BD0089220B /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
-		3415D6631C8A37BD0089220B /* parks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = parks.json; sourceTree = "<group>"; };
+		3415D6631C8A37BD0089220B /* places.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = places.json; sourceTree = "<group>"; };
+		341DFF2E1C8AA3CF00F5F67F /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = SOURCE_ROOT; };
+		341DFF301C8AA46700F5F67F /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		341DFF321C8AA47300F5F67F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		341DFF341C8AA47D00F5F67F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		341DFF361C8AA48900F5F67F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		341DFF381C8AA49800F5F67F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		341DFF3D1C8AA8EF00F5F67F /* CTHHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTHHelper.swift; sourceTree = "<group>"; };
+		344A86A91C8BF08600EA19E7 /* PlaceToFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceToFirebase.swift; sourceTree = "<group>"; };
 		34B00EC91C881751007918CE /* iBestFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBestFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B00ECC1C881751007918CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34B00ECE1C881751007918CE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -66,11 +85,12 @@
 		34B00EEB1C881751007918CE /* iBestFriendUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBestFriendUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B00EEF1C881751007918CE /* iBestFriendUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBestFriendUITests.swift; sourceTree = "<group>"; };
 		34B00EF11C881751007918CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34B00F011C881DB1007918CE /* ParkListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkListTableViewController.swift; sourceTree = "<group>"; };
-		34B00F031C881EA3007918CE /* ParkListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkListTableViewCell.swift; sourceTree = "<group>"; };
+		34B00F011C881DB1007918CE /* PlaceListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListTableViewController.swift; sourceTree = "<group>"; };
+		34B00F031C881EA3007918CE /* PlaceListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListTableViewCell.swift; sourceTree = "<group>"; };
+		34E7A6911C8BAA79009F68F5 /* PlaceMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceMapViewController.swift; sourceTree = "<group>"; };
 		34EA231B1C88C29A00EB3FBE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		34EA231F1C88ECEC00EB3FBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		34EA23211C89006700EB3FBE /* ParkInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkInfoViewController.swift; sourceTree = "<group>"; };
+		34EA23211C89006700EB3FBE /* PlaceInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceInfoViewController.swift; sourceTree = "<group>"; };
 		34EA23231C89008200EB3FBE /* AccountInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
 		34EA23251C89009C00EB3FBE /* NewPetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +100,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				341DFF391C8AA49800F5F67F /* SystemConfiguration.framework in Frameworks */,
+				341DFF371C8AA48900F5F67F /* Security.framework in Frameworks */,
+				341DFF351C8AA47D00F5F67F /* CFNetwork.framework in Frameworks */,
+				341DFF331C8AA47300F5F67F /* libc++.tbd in Frameworks */,
+				341DFF311C8AA46700F5F67F /* libicucore.tbd in Frameworks */,
+				341DFF2F1C8AA3CF00F5F67F /* Firebase.framework in Frameworks */,
 				340102A61C8A485C004C5423 /* SwiftyJSON.framework in Frameworks */,
 				34EA231C1C88C29A00EB3FBE /* MapKit.framework in Frameworks */,
 				340102AC1C8A4B11004C5423 /* Crashlytics.framework in Frameworks */,
@@ -104,27 +130,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3415D65F1C8A2F680089220B /* Views */ = {
+		3415D65F1C8A2F680089220B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				34B00ECE1C881751007918CE /* LoginViewController.swift */,
-				34B00F011C881DB1007918CE /* ParkListTableViewController.swift */,
-				34B00F031C881EA3007918CE /* ParkListTableViewCell.swift */,
-				34EA23211C89006700EB3FBE /* ParkInfoViewController.swift */,
+				34B00F011C881DB1007918CE /* PlaceListTableViewController.swift */,
+				34B00F031C881EA3007918CE /* PlaceListTableViewCell.swift */,
+				34E7A6911C8BAA79009F68F5 /* PlaceMapViewController.swift */,
+				34EA23211C89006700EB3FBE /* PlaceInfoViewController.swift */,
 				34EA23231C89008200EB3FBE /* AccountInfoViewController.swift */,
 				34EA23251C89009C00EB3FBE /* NewPetViewController.swift */,
 			);
-			name = Views;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		3415D6601C8A2F7E0089220B /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				3415D6611C8A30BD0089220B /* Place.swift */,
+				3414444A1C91EF7800F5BF43 /* PlaceData.swift */,
+				344A86A91C8BF08600EA19E7 /* PlaceToFirebase.swift */,
 				3415D65D1C8A2F580089220B /* UserRaing.swift */,
-				3415D6631C8A37BD0089220B /* parks.json */,
+				3415D6631C8A37BD0089220B /* places.json */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		341DFF3A1C8AA5CE00F5F67F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34EA231B1C88C29A00EB3FBE /* MapKit.framework */,
+				340102A51C8A485C004C5423 /* SwiftyJSON.framework */,
+				340102A91C8A4B11004C5423 /* Fabric.framework */,
+				340102AA1C8A4B11004C5423 /* Crashlytics.framework */,
+				341DFF2E1C8AA3CF00F5F67F /* Firebase.framework */,
+				341DFF381C8AA49800F5F67F /* SystemConfiguration.framework */,
+				341DFF361C8AA48900F5F67F /* Security.framework */,
+				341DFF341C8AA47D00F5F67F /* CFNetwork.framework */,
+				341DFF321C8AA47300F5F67F /* libc++.tbd */,
+				341DFF301C8AA46700F5F67F /* libicucore.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		34B00EC01C881751007918CE = {
@@ -153,15 +199,13 @@
 				34B00ED81C881751007918CE /* LaunchScreen.storyboard */,
 				34B00ED01C881751007918CE /* Main.storyboard */,
 				34B00ECC1C881751007918CE /* AppDelegate.swift */,
-				3415D65F1C8A2F680089220B /* Views */,
+				3415D65F1C8A2F680089220B /* Controllers */,
 				3415D6601C8A2F7E0089220B /* Models */,
+				341DFF3D1C8AA8EF00F5F67F /* CTHHelper.swift */,
 				34B00EDB1C881751007918CE /* Info.plist */,
 				34EA231F1C88ECEC00EB3FBE /* Assets.xcassets */,
 				34B00ED31C881751007918CE /* iBestFriend.xcdatamodeld */,
-				340102A91C8A4B11004C5423 /* Fabric.framework */,
-				340102AA1C8A4B11004C5423 /* Crashlytics.framework */,
-				340102A51C8A485C004C5423 /* SwiftyJSON.framework */,
-				34EA231B1C88C29A00EB3FBE /* MapKit.framework */,
+				341DFF3A1C8AA5CE00F5F67F /* Frameworks */,
 			);
 			path = iBestFriend;
 			sourceTree = "<group>";
@@ -301,7 +345,7 @@
 				34B00EDA1C881751007918CE /* LaunchScreen.storyboard in Resources */,
 				34EA23201C88ECEC00EB3FBE /* Assets.xcassets in Resources */,
 				34B00ED21C881751007918CE /* Main.storyboard in Resources */,
-				3415D6641C8A37BD0089220B /* parks.json in Resources */,
+				3415D6641C8A37BD0089220B /* places.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,15 +400,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34EA23221C89006700EB3FBE /* ParkInfoViewController.swift in Sources */,
-				34B00F041C881EA3007918CE /* ParkListTableViewCell.swift in Sources */,
+				34EA23221C89006700EB3FBE /* PlaceInfoViewController.swift in Sources */,
+				34B00F041C881EA3007918CE /* PlaceListTableViewCell.swift in Sources */,
 				34B00ED51C881751007918CE /* iBestFriend.xcdatamodeld in Sources */,
+				3414444B1C91EF7800F5BF43 /* PlaceData.swift in Sources */,
+				344A86AA1C8BF08600EA19E7 /* PlaceToFirebase.swift in Sources */,
 				3415D6621C8A30BD0089220B /* Place.swift in Sources */,
 				34EA23241C89008200EB3FBE /* AccountInfoViewController.swift in Sources */,
 				3415D65E1C8A2F580089220B /* UserRaing.swift in Sources */,
 				34B00ECF1C881751007918CE /* LoginViewController.swift in Sources */,
 				34B00ECD1C881751007918CE /* AppDelegate.swift in Sources */,
-				34B00F021C881DB1007918CE /* ParkListTableViewController.swift in Sources */,
+				34B00F021C881DB1007918CE /* PlaceListTableViewController.swift in Sources */,
+				34E7A6921C8BAA79009F68F5 /* PlaceMapViewController.swift in Sources */,
+				341DFF3E1C8AA8EF00F5F67F /* CTHHelper.swift in Sources */,
 				34EA23261C89009C00EB3FBE /* NewPetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +555,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
