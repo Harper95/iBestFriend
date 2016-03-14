@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
+	
 	// MARK: - Outlets
 	@IBOutlet weak var usernameTextField: UITextField!
 	@IBOutlet weak var passwordTextField: UITextField!
@@ -19,13 +21,13 @@ class LoginViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 	}
-
+	
 	// MARK: - Actions
 	@IBAction func loginButtonTouched(sender: AnyObject) {
-		
+		Users.loginWithEmail(usernameTextField.text!, password: passwordTextField.text!)
 	}
 	@IBAction func signUpButtonTouched(sender: AnyObject) {
-		
+		// Create an alert controller
 	}
 }
 

@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Firebase
 
 class PlaceListTableViewController: UITableViewController {
-	
+		
 	override func viewWillAppear(animated: Bool) {
 		navigationItem.setHidesBackButton(true, animated: false)
 	}

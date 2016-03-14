@@ -28,17 +28,17 @@ class UserRating: UIView {
 		let blankPawImage = UIImage(named: "Blank Paw")
 		
 		for _ in 0..<paws {
-			let pawRating = UIButton()
+			let pawRatingButton = UIButton()
 			
-			pawRating.setImage(blankPawImage, forState: .Normal)
-			pawRating.setImage(ratedPawImage, forState: .Selected)
-			pawRating.setImage(ratedPawImage, forState: [.Highlighted, .Selected])
+			pawRatingButton.setImage(blankPawImage, forState: .Normal)
+			pawRatingButton.setImage(ratedPawImage, forState: .Selected)
+			pawRatingButton.setImage(ratedPawImage, forState: [.Highlighted, .Selected])
 			
-			pawRating.adjustsImageWhenHighlighted = false
+			pawRatingButton.adjustsImageWhenHighlighted = false
 			
-			pawRating.addTarget(self, action: "pawRatingTapped:", forControlEvents: .TouchDown)
-			pawButtons += [pawRating]
-			addSubview(pawRating)
+			pawRatingButton.addTarget(self, action: "pawRatingTapped:", forControlEvents: .TouchDown)
+			pawButtons += [pawRatingButton]
+			addSubview(pawRatingButton)
 		}
 	}
 	
