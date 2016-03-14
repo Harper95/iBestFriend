@@ -14,8 +14,6 @@ class LoginViewController: UIViewController {
 	// MARK: - Outlets
 	@IBOutlet weak var usernameTextField: UITextField!
 	@IBOutlet weak var passwordTextField: UITextField!
-	@IBOutlet weak var loginButton: UIButton!
-	@IBOutlet weak var signUpButton: UIButton!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -23,11 +21,22 @@ class LoginViewController: UIViewController {
 	}
 	
 	// MARK: - Actions
+
+
 	@IBAction func loginButtonTouched(sender: AnyObject) {
 		Users.loginWithEmail(usernameTextField.text!, password: passwordTextField.text!)
 	}
+	@IBAction func facebookLoginTouched(sender: AnyObject) {
+		
+	}
+	@IBAction func guestButtonTouched(sender: AnyObject) {
+		Users.guestLogin()
+	}
+	@IBAction func forgotPasswordButtonTouched(sender: AnyObject) {
+		
+	}
 	@IBAction func signUpButtonTouched(sender: AnyObject) {
-		// Create an alert controller
+		
 	}
 }
 

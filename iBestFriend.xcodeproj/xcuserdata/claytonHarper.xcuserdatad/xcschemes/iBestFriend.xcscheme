@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "34B00EC81C881751007918CE"
-               BuildableName = "iBestFriend.app"
+               BuildableName = "iBestFriend.temp_caseinsensitive_rename.app"
                BlueprintName = "iBestFriend"
                ReferencedContainer = "container:iBestFriend.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "34B00EDF1C881751007918CE"
-               BuildableName = "iBestFriendTests.xctest"
+               BuildableName = "iBestFriend.temp_caseinsensitive_rename.xctest"
                BlueprintName = "iBestFriendTests"
                ReferencedContainer = "container:iBestFriend.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "34B00EEA1C881751007918CE"
-               BuildableName = "iBestFriendUITests.xctest"
+               BuildableName = "iBestFriend.temp_caseinsensitive_rename.xctest"
                BlueprintName = "iBestFriendUITests"
                ReferencedContainer = "container:iBestFriend.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "34B00EC81C881751007918CE"
-            BuildableName = "iBestFriend.app"
+            BuildableName = "iBestFriend.temp_caseinsensitive_rename.app"
             BlueprintName = "iBestFriend"
             ReferencedContainer = "container:iBestFriend.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "34B00EC81C881751007918CE"
-            BuildableName = "iBestFriend.app"
+            BuildableName = "iBestFriend.temp_caseinsensitive_rename.app"
             BlueprintName = "iBestFriend"
             ReferencedContainer = "container:iBestFriend.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "34B00EC81C881751007918CE"
-            BuildableName = "iBestFriend.app"
+            BuildableName = "iBestFriend.temp_caseinsensitive_rename.app"
             BlueprintName = "iBestFriend"
             ReferencedContainer = "container:iBestFriend.xcodeproj">
          </BuildableReference>

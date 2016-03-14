@@ -57,16 +57,16 @@
 		3415D6611C8A30BD0089220B /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		341DFF3D1C8AA8EF00F5F67F /* CTHHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTHHelper.swift; sourceTree = "<group>"; };
 		3453751B1C93DDC5001A0E23 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
-		34B00EC91C881751007918CE /* iBestFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBestFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34B00EC91C881751007918CE /* iBestFriend.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBestFriend.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B00ECC1C881751007918CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34B00ECE1C881751007918CE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		34B00ED11C881751007918CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34B00ED91C881751007918CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34B00EDB1C881751007918CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34B00EE01C881751007918CE /* iBestFriendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBestFriendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		34B00EE01C881751007918CE /* iBestFriend.temp_caseinsensitive_rename.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBestFriend.temp_caseinsensitive_rename.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B00EE41C881751007918CE /* iBestFriendTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBestFriendTests.swift; sourceTree = "<group>"; };
 		34B00EE61C881751007918CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34B00EEB1C881751007918CE /* iBestFriendUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBestFriendUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		34B00EEB1C881751007918CE /* iBestFriend.temp_caseinsensitive_rename.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBestFriend.temp_caseinsensitive_rename.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B00EEF1C881751007918CE /* iBestFriendUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBestFriendUITests.swift; sourceTree = "<group>"; };
 		34B00EF11C881751007918CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34B00F011C881DB1007918CE /* PlaceListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListTableViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +127,7 @@
 				34D94E9F1C9520E700AF905A /* AccountSettingsViewController.swift */,
 				34D94EA11C95217900AF905A /* FavoritesViewController.swift */,
 				3453751B1C93DDC5001A0E23 /* ReviewViewController.swift */,
+				3415D65D1C8A2F580089220B /* UserRaing.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -135,19 +136,10 @@
 			isa = PBXGroup;
 			children = (
 				34CC00BA1C96002F003A1C4C /* Users.swift */,
-				3415D65D1C8A2F580089220B /* UserRaing.swift */,
 				3415D6611C8A30BD0089220B /* Place.swift */,
 				34CC00B81C95FC44003A1C4C /* FirebaseRefs.swift */,
 			);
 			name = Models;
-			sourceTree = "<group>";
-		};
-		341DFF3A1C8AA5CE00F5F67F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				34EA231B1C88C29A00EB3FBE /* MapKit.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		34B00EC01C881751007918CE = {
@@ -165,9 +157,9 @@
 		34B00ECA1C881751007918CE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				34B00EC91C881751007918CE /* iBestFriend.app */,
-				34B00EE01C881751007918CE /* iBestFriendTests.xctest */,
-				34B00EEB1C881751007918CE /* iBestFriendUITests.xctest */,
+				34B00EC91C881751007918CE /* iBestFriend.temp_caseinsensitive_rename.app */,
+				34B00EE01C881751007918CE /* iBestFriend.temp_caseinsensitive_rename.xctest */,
+				34B00EEB1C881751007918CE /* iBestFriend.temp_caseinsensitive_rename.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,7 +175,7 @@
 				341DFF3D1C8AA8EF00F5F67F /* CTHHelper.swift */,
 				34B00EDB1C881751007918CE /* Info.plist */,
 				34EA231F1C88ECEC00EB3FBE /* Assets.xcassets */,
-				341DFF3A1C8AA5CE00F5F67F /* Frameworks */,
+				34EA231B1C88C29A00EB3FBE /* MapKit.framework */,
 			);
 			path = iBestFriend;
 			sourceTree = "<group>";
@@ -254,7 +246,7 @@
 			);
 			name = iBestFriend;
 			productName = iBestFriend;
-			productReference = 34B00EC91C881751007918CE /* iBestFriend.app */;
+			productReference = 34B00EC91C881751007918CE /* iBestFriend.temp_caseinsensitive_rename.app */;
 			productType = "com.apple.product-type.application";
 		};
 		34B00EDF1C881751007918CE /* iBestFriendTests */ = {
@@ -272,7 +264,7 @@
 			);
 			name = iBestFriendTests;
 			productName = iBestFriendTests;
-			productReference = 34B00EE01C881751007918CE /* iBestFriendTests.xctest */;
+			productReference = 34B00EE01C881751007918CE /* iBestFriend.temp_caseinsensitive_rename.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		34B00EEA1C881751007918CE /* iBestFriendUITests */ = {
@@ -290,7 +282,7 @@
 			);
 			name = iBestFriendUITests;
 			productName = iBestFriendUITests;
-			productReference = 34B00EEB1C881751007918CE /* iBestFriendUITests.xctest */;
+			productReference = 34B00EEB1C881751007918CE /* iBestFriend.temp_caseinsensitive_rename.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -597,11 +589,11 @@
 			baseConfigurationReference = 07712AFF8B506C13FF7FE251 /* Pods-iBestFriend.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = iBestFriend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ctharper.iBestFriend;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iBestFriend.temp_caseinsensitive_rename;
 			};
 			name = Debug;
 		};
@@ -613,7 +605,7 @@
 				INFOPLIST_FILE = iBestFriend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ctharper.iBestFriend;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iBestFriend.temp_caseinsensitive_rename;
 			};
 			name = Release;
 		};
@@ -624,8 +616,8 @@
 				INFOPLIST_FILE = iBestFriendTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ctharper.iBestFriendTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBestFriend.app/iBestFriend";
+				PRODUCT_NAME = iBestFriend.temp_caseinsensitive_rename;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBestFriend.temp_caseinsensitive_rename.app/iBestFriend.temp_caseinsensitive_rename";
 			};
 			name = Debug;
 		};
@@ -636,8 +628,8 @@
 				INFOPLIST_FILE = iBestFriendTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ctharper.iBestFriendTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBestFriend.app/iBestFriend";
+				PRODUCT_NAME = iBestFriend.temp_caseinsensitive_rename;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBestFriend.temp_caseinsensitive_rename.app/iBestFriend.temp_caseinsensitive_rename";
 			};
 			name = Release;
 		};
@@ -647,7 +639,7 @@
 				INFOPLIST_FILE = iBestFriendUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ctharper.iBestFriendUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iBestFriend.temp_caseinsensitive_rename;
 				TEST_TARGET_NAME = iBestFriend;
 				USES_XCTRUNNER = YES;
 			};
@@ -659,7 +651,7 @@
 				INFOPLIST_FILE = iBestFriendUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ctharper.iBestFriendUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iBestFriend.temp_caseinsensitive_rename;
 				TEST_TARGET_NAME = iBestFriend;
 				USES_XCTRUNNER = YES;
 			};

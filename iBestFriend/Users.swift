@@ -11,7 +11,7 @@ import FBSDKLoginKit
 
 public class Users {
 	
-	// MARK - Email and Password Authentication
+	// MARK: - Email and Password Authentication
 	static func createUserWithEmail(email: String, password: String) {
 		FirebaseRefs.rootRef.createUser(email, password: password) { error, result in
 			
@@ -68,7 +68,7 @@ public class Users {
 		}
 	}
 	
-	// MARK - Facebook Authentication
+	// MARK: - Facebook Authentication
 	static func loginWithFacebook() {
 		let facebookLogin = FBSDKLoginManager()
 		
@@ -84,11 +84,23 @@ public class Users {
 				FirebaseRefs.rootRef.authWithOAuthProvider("facebook", token: accessToken) { error, authData in
 					
 					if error != nil {
-						print("Login failed. \(error)")
+						print("Facebook login failed. \(error)")
 					} else {
-						print("Login success. \(authData)")
+						print("Facebook login success. \(authData)")
 					}
 				}
+			}
+		}
+	}
+	
+	//MARK: - Guest Authentication
+	static func guestLogin() {
+		FirebaseRefs.rootRef.authAnonymouslyWithCompletionBlock { error, authData in
+			
+			if error != nil {
+				print("Error loging in as guest \(error)")
+			} else {
+				print("Guest login success. \(error)")
 			}
 		}
 	}
