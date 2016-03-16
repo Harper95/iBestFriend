@@ -1,5 +1,5 @@
 //
-//  FavoritesTableViewCell.swift
+//  FavoritesTableCell.swift
 //  iBestFriend
 //
 //  Created by Clayton Harper on 3/12/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavoritesTableViewCell: UITableViewCell {
+class FavoritesTableCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

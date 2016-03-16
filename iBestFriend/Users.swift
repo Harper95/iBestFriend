@@ -100,8 +100,13 @@ public class Users {
 			if error != nil {
 				print("Error loging in as guest \(error)")
 			} else {
-				print("Guest login success. \(error)")
+				print("Guest login success. \(authData)")
 			}
 		}
+	}
+	
+	//MARK: - Logout
+	static func logOut() {
+			FirebaseRefs.rootRef.unauth()
 	}
 }

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  Login.swift
 //  iBestFriend
 //
 //  Created by Clayton Harper on 3/2/16.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class Login: UIViewController {
 	
 	// MARK: - Outlets
 	@IBOutlet weak var usernameTextField: UITextField!
@@ -17,26 +17,31 @@ class LoginViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+	}
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		FirebaseRefs.rootRef.observeAuthEventWithBlock { (authData) -> Void in
+			if authData != nil {
+				self.performSegueWithIdentifier("LoginToList", sender: nil)
+			}
+		}
 	}
 	
 	// MARK: - Actions
-
-
 	@IBAction func loginButtonTouched(sender: AnyObject) {
 		Users.loginWithEmail(usernameTextField.text!, password: passwordTextField.text!)
 	}
 	@IBAction func facebookLoginTouched(sender: AnyObject) {
-		
+		Users.loginWithFacebook()
 	}
 	@IBAction func guestButtonTouched(sender: AnyObject) {
 		Users.guestLogin()
 	}
 	@IBAction func forgotPasswordButtonTouched(sender: AnyObject) {
-		
+		Users.resetPasswordByEmail(usernameTextField.text!)
 	}
 	@IBAction func signUpButtonTouched(sender: AnyObject) {
-		
+		Users.createUserWithEmail(usernameTextField.text!, password: passwordTextField.text!)
 	}
 }
 

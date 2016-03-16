@@ -1,5 +1,5 @@
 //
-//  AccountSettingsViewController.swift
+//  AccountSettings.swift
 //  iBestFriend
 //
 //  Created by Clayton Harper on 3/12/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountSettingsViewController: UIViewController {
+class AccountSettings: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

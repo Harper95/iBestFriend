@@ -1,5 +1,5 @@
 //
-//  PlaceListTableViewController.swift
+//  PlaceListTable.swift
 //  iBestFriend
 //
 //  Created by Clayton Harper on 3/3/16.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class PlaceListTableViewController: UITableViewController {
+class PlaceListTable: UITableViewController {
 		
 	override func viewWillAppear(animated: Bool) {
 		navigationItem.setHidesBackButton(true, animated: false)

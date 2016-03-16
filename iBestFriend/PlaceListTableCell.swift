@@ -1,5 +1,5 @@
 //
-//  PlaceListTableViewCell.swift
+//  PlaceListTableCell.swift
 //  iBestFriend
 //
 //  Created by Clayton Harper on 3/3/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlaceListTableViewCell: UITableViewCell {
+class PlaceListTableCell: UITableViewCell {
 	// MARK: - Outlets
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var typeLabel: UILabel!

@@ -1,5 +1,5 @@
 //
-//  AccountInfoViewController.swift
+//  PlaceInfo.swift
 //  iBestFriend
 //
 //  Created by Clayton Harper on 3/3/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountInfoViewController: UIViewController {
+class PlaceInfo: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,3 +27,4 @@ class AccountInfoViewController: UIViewController {
     */
 
 }
+

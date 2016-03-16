@@ -1,5 +1,5 @@
 //
-//  AccountSettingsTableViewCell.swift
+//  AccountSettingsTableCell.swift
 //  iBestFriend
 //
 //  Created by Clayton Harper on 3/12/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountSettingsTableViewCell: UITableViewCell {
+class AccountSettingsTableCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
