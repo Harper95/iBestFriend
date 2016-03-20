@@ -40,8 +40,6 @@ class Login: UIViewController {
 	@IBAction func forgotPasswordButtonTouched(sender: AnyObject) {
 		Users.resetPasswordByEmail(usernameTextField.text!)
 	}
-	@IBAction func signUpButtonTouched(sender: AnyObject) {
-		Users.createUserWithEmail(usernameTextField.text!, password: passwordTextField.text!)
-	}
+
 }
 

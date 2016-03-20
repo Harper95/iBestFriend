@@ -6,8 +6,8 @@
 //  Copyright © 2016 Clayton Harper. All rights reserved.
 //
 
-import UIKit	// UIKit and Foundation
-import MapKit // MapKit and CoreLocation
+import UIKit
+import MapKit
 
 protocol HandleMapSearch {
 	func dropPinZoomIn(placeMark: MKPlacemark)
@@ -15,12 +15,15 @@ protocol HandleMapSearch {
 
 class PlaceMap: UIViewController {
 	
+	// MARK: - Outlets
 	@IBOutlet weak var mapView: MKMapView!
 	
-	let locationManager = CLLocationManager()							// Gain acess to locationManager throughout the scope
-	var resultSearchController: UISearchController? = nil	// Keep search controller in memory after it's been created
-	var selectedPin: MKPlacemark? = nil										// Cache any incoming placemarks
-
+	// MARK: - Properties
+	let locationManager = CLLocationManager()
+	var resultSearchController: UISearchController? = nil
+	var selectedPin: MKPlacemark? = nil
+	
+	var matchingParks = [MKMapItem]()
 	
 	override func viewWillAppear(animated: Bool) {
 		navigationItem.setHidesBackButton(true, animated: false)
@@ -29,10 +32,10 @@ class PlaceMap: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		locationManager.delegate = self																			// Delegate methods handled asynchronously
-		locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters	// Set to hundredMeters to save battery life
-		locationManager.requestWhenInUseAuthorization()											// Prompt user for location permission(only happens once)
-		locationManager.requestLocation()																		// One time location request
+		locationManager.delegate = self
+		locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+		locationManager.requestWhenInUseAuthorization()
+		locationManager.requestLocation()
 		
 		let locationSearchTable = storyboard!.instantiateViewControllerWithIdentifier("LocationSearchTable") as! LocationSearchTable
 		resultSearchController = UISearchController(searchResultsController: locationSearchTable)
@@ -45,13 +48,17 @@ class PlaceMap: UIViewController {
 		navigationItem.titleView = resultSearchController!.searchBar
 		
 		// Configure the UISearchController Appearance
-		resultSearchController?.hidesNavigationBarDuringPresentation = false	// Want access to the search bar at all times
-		resultSearchController?.dimsBackgroundDuringPresentation = true				// Create semi-transparent backgroun when searchBar is selected
-		definesPresentationContext = true																			// Limit modal overlay to just the View Controller's frame
+		resultSearchController?.hidesNavigationBarDuringPresentation = false
+		resultSearchController?.dimsBackgroundDuringPresentation = true
+		definesPresentationContext = true
 		
-		locationSearchTable.mapView = mapView		// Pass along a handle of mapView to locationSearchTable
+		locationSearchTable.mapView = mapView
 		
 		locationSearchTable.handleMapSearchDelegate = self
+	}
+	
+	func getInformation() {
+		storyboard!.instantiateViewControllerWithIdentifier("PlaceInfo")
 	}
 	
 	func getDirections() {
@@ -63,21 +70,21 @@ class PlaceMap: UIViewController {
 	}
 	
 }
-
+// MARK: - Location Manager Delegate
 extension PlaceMap: CLLocationManagerDelegate {
 	
 	func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-		if status == .AuthorizedWhenInUse {		// If user authorizes location usage
+		if status == .AuthorizedWhenInUse {
 			locationManager.requestLocation()
 		}
 	}
 	
 	func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		if let location = locations.first {																					// Grab the first location in the array
-			let span = MKCoordinateSpanMake(0.05, 0.05)																// Zoom level 0.05 longitude and latitude
+		if let location = locations.first {												// Grab the first location in the array
+			let span = MKCoordinateSpanMake(0.1, 0.1)									// Zoom level 0.05 longitude and latitude
 			let region = MKCoordinateRegion(center: location.coordinate, span: span)	// The point of intrest and how far to zoom in
 			
-			mapView.setRegion(region, animated: true)																	// Zoom to the region
+			mapView.setRegion(region, animated: true)									// Zoom to the region
 		}
 	}
 	
@@ -86,8 +93,9 @@ extension PlaceMap: CLLocationManagerDelegate {
 	}
 	
 }
-
+// MARK: - Map View Delegate
 extension PlaceMap: MKMapViewDelegate {
+	
 	func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
 		if annotation is MKUserLocation {
 			// Return nil so map view draws "blue dot" for standard user location
@@ -101,34 +109,38 @@ extension PlaceMap: MKMapViewDelegate {
 		pinView?.canShowCallout = true
 		
 		let smallSquare = CGSize(width: 30, height: 30)
-		let button = UIButton(frame: CGRect(origin: CGPointZero, size: smallSquare))
-		button.setImage(UIImage(named: "rightChevron"), forState: .Normal)
-		button.addTarget(self, action: "getDirections", forControlEvents: .TouchUpInside)
-		pinView?.rightCalloutAccessoryView = button
+		let rightButton = UIButton(frame: CGRect(origin: CGPointZero, size: smallSquare))
+		rightButton.setImage(UIImage(named: "info"), forState: .Normal)
+		rightButton.addTarget(self, action: "getInformation", forControlEvents: .TouchUpInside)
+		pinView?.rightCalloutAccessoryView = rightButton
+		
+		let leftButton = UIButton(frame: CGRect(origin: CGPointZero, size: smallSquare))
+		leftButton.setImage(UIImage(named: "car"), forState: .Normal)
+		leftButton.addTarget(self, action: "getDirections", forControlEvents: .TouchUpInside)
+		pinView?.leftCalloutAccessoryView = leftButton
 		
 		return pinView
 	}
 	
 }
-
+// MARK: - Handle Map Search Protocol
 extension PlaceMap: HandleMapSearch {
+	
 	func dropPinZoomIn(placeMark: MKPlacemark) {
-		// Cache the pin
 		selectedPin = placeMark
-		// Clear existing pins
 		mapView.removeAnnotations(mapView.annotations)
-		// Create the annotation
+
 		let annotion = MKPointAnnotation()
 		annotion.coordinate = placeMark.coordinate
 		annotion.title = placeMark.name
+		
 		if let city = placeMark.locality,
 			let state = placeMark.administrativeArea {
 				annotion.subtitle = "\(city) \(state)"
 		}
-		// Add annotation to the map
 		mapView.addAnnotation(annotion)
-		// Zoom to location
-		let span = MKCoordinateSpanMake(0.005, 0.005)
+		
+		let span = MKCoordinateSpanMake(0.05, 0.05)
 		let region = MKCoordinateRegionMake(placeMark.coordinate, span)
 		mapView.setRegion(region, animated: true)
 	}

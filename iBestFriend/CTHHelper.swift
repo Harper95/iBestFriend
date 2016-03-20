@@ -59,6 +59,16 @@ extension Float {
     }
 }
 
+//MARK: String extenstions
+
+extension String {
+	func isValidEmail() -> Bool {
+		let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+		let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+		return emailTest.evaluateWithObject(self)
+	}
+}
+
 //MARK: UIImage extensions
 extension UIImage {
     /// Creates an image that will fit inside the given rectangle (won't work in Playground)
@@ -188,6 +198,8 @@ public func CTHAlertTextFor(controller:UIViewController, title:String, message:S
     
     controller.presentViewController(alertController, animated: true, completion:nil)
 }
+
+//MARK: Animation conveniences
 
 /// Apples formula for rounded corners
 extension CALayer {

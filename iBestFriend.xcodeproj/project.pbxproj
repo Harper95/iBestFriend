@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		340BA0B61C9DF1A000150C9B /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340BA0B51C9DF1A000150C9B /* SignUp.swift */; };
 		3415D65E1C8A2F580089220B /* UserRaing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415D65D1C8A2F580089220B /* UserRaing.swift */; };
 		3415D6621C8A30BD0089220B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415D6611C8A30BD0089220B /* Place.swift */; };
 		341CFBE31C99234300F3A76A /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341CFBE21C99234300F3A76A /* LocationSearchTable.swift */; };
 		341DFF3E1C8AA8EF00F5F67F /* CTHHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DFF3D1C8AA8EF00F5F67F /* CTHHelper.swift */; };
 		3453751C1C93DDC5001A0E23 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3453751B1C93DDC5001A0E23 /* Review.swift */; };
+		3457FB5D1C9E7580006D8BDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3457FB5B1C9E7580006D8BDC /* Main.storyboard */; };
 		34B00ECD1C881751007918CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00ECC1C881751007918CE /* AppDelegate.swift */; };
 		34B00ECF1C881751007918CE /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00ECE1C881751007918CE /* Login.swift */; };
-		34B00ED21C881751007918CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B00ED01C881751007918CE /* Main.storyboard */; };
 		34B00EDA1C881751007918CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B00ED81C881751007918CE /* LaunchScreen.storyboard */; };
 		34B00EE51C881751007918CE /* iBestFriendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00EE41C881751007918CE /* iBestFriendTests.swift */; };
 		34B00EF01C881751007918CE /* iBestFriendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00EEF1C881751007918CE /* iBestFriendUITests.swift */; };
@@ -54,15 +55,16 @@
 
 /* Begin PBXFileReference section */
 		07712AFF8B506C13FF7FE251 /* Pods-iBestFriend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBestFriend.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iBestFriend/Pods-iBestFriend.debug.xcconfig"; sourceTree = "<group>"; };
+		340BA0B51C9DF1A000150C9B /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		3415D65D1C8A2F580089220B /* UserRaing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRaing.swift; sourceTree = "<group>"; };
 		3415D6611C8A30BD0089220B /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		341CFBE21C99234300F3A76A /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		341DFF3D1C8AA8EF00F5F67F /* CTHHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTHHelper.swift; sourceTree = "<group>"; };
 		3453751B1C93DDC5001A0E23 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		3457FB5C1C9E7580006D8BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34B00EC91C881751007918CE /* iBestFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBestFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B00ECC1C881751007918CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34B00ECE1C881751007918CE /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		34B00ED11C881751007918CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34B00ED91C881751007918CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34B00EDB1C881751007918CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34B00EE01C881751007918CE /* iBestFriend.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBestFriend.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 			children = (
 				34D94EA31C9521E700AF905A /* Cells */,
 				34B00ECE1C881751007918CE /* Login.swift */,
+				340BA0B51C9DF1A000150C9B /* SignUp.swift */,
 				34B00F011C881DB1007918CE /* PlaceListTable.swift */,
 				34E7A6911C8BAA79009F68F5 /* PlaceMap.swift */,
 				341CFBE21C99234300F3A76A /* LocationSearchTable.swift */,
@@ -172,7 +175,7 @@
 			children = (
 				34EA231F1C88ECEC00EB3FBE /* Assets.xcassets */,
 				34B00ED81C881751007918CE /* LaunchScreen.storyboard */,
-				34B00ED01C881751007918CE /* Main.storyboard */,
+				3457FB5B1C9E7580006D8BDC /* Main.storyboard */,
 				34B00ECC1C881751007918CE /* AppDelegate.swift */,
 				3415D65F1C8A2F680089220B /* Controllers */,
 				3415D6601C8A2F7E0089220B /* Models */,
@@ -344,9 +347,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3457FB5D1C9E7580006D8BDC /* Main.storyboard in Resources */,
 				34B00EDA1C881751007918CE /* LaunchScreen.storyboard in Resources */,
 				34EA23201C88ECEC00EB3FBE /* Assets.xcassets in Resources */,
-				34B00ED21C881751007918CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +444,7 @@
 				34EA23241C89008200EB3FBE /* AccountInfo.swift in Sources */,
 				3415D65E1C8A2F580089220B /* UserRaing.swift in Sources */,
 				34B00ECF1C881751007918CE /* Login.swift in Sources */,
+				340BA0B61C9DF1A000150C9B /* SignUp.swift in Sources */,
 				34B00ECD1C881751007918CE /* AppDelegate.swift in Sources */,
 				34CC00BB1C96002F003A1C4C /* Users.swift in Sources */,
 				34B00F021C881DB1007918CE /* PlaceListTable.swift in Sources */,
@@ -486,10 +490,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		34B00ED01C881751007918CE /* Main.storyboard */ = {
+		3457FB5B1C9E7580006D8BDC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				34B00ED11C881751007918CE /* Base */,
+				3457FB5C1C9E7580006D8BDC /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -621,7 +625,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ctharper.iBestFriendTests;
 				PRODUCT_NAME = iBestFriend;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBestFriend.temp_caseinsensitive_rename.app/iBestFriend.temp_caseinsensitive_rename";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBestFriend.app/iBestFriend";
 			};
 			name = Debug;
 		};
@@ -633,7 +637,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ctharper.iBestFriendTests;
 				PRODUCT_NAME = iBestFriend;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBestFriend.temp_caseinsensitive_rename.app/iBestFriend.temp_caseinsensitive_rename";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBestFriend.app/iBestFriend";
 			};
 			name = Release;
 		};

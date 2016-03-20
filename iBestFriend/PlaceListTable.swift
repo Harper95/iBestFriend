@@ -20,7 +20,7 @@ class PlaceListTable: UITableViewController {
 		// self.clearsSelectionOnViewWillAppear = false
 	}
 	
-	// MARK: - Table view data
+	// MARK: - Table View
 	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 		return 1
 	}

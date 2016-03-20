@@ -16,40 +16,18 @@ class LocationSearchTable: UITableViewController {
 	var mapView: MKMapView? = nil
 	var handleMapSearchDelegate: HandleMapSearch? = nil
 	
-	// MARK: -
 	override func viewDidLoad() {
 		super.viewDidLoad()
-	}
-	
-	// MARK: - UITableViewDataSource
-	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return matchingItems.count
-	}
-	
-	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
-		let selectedItem = matchingItems[indexPath.row].placemark
-		
-		cell.textLabel?.text = selectedItem.name
-		cell.detailTextLabel?.text = parseAddress(selectedItem)
-		
-		return cell
-	}
-	
-	// MARK: - UITableViewDelegate
-	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		let selectedItem = matchingItems[indexPath.row].placemark
-		handleMapSearchDelegate?.dropPinZoomIn(selectedItem)
-		dismissViewControllerAnimated(true, completion: nil)
 	}
 	
 	func parseAddress(selectedItem: MKPlacemark) -> String {
 		let firstSpace = (selectedItem.subThoroughfare != nil && selectedItem.thoroughfare != nil) ? " " : ""
 		let comma = (selectedItem.subThoroughfare != nil || selectedItem.thoroughfare != nil) &&
-								(selectedItem.subAdministrativeArea != nil || selectedItem.administrativeArea != nil) ? ", " : ""
+					(selectedItem.subAdministrativeArea != nil || selectedItem.administrativeArea != nil) ? ", " : ""
 		let secondSpace = (selectedItem.subAdministrativeArea != nil && selectedItem.administrativeArea != nil) ? " " : ""
 		
 		let addressLine = String(
+			// %@ represents a string
 			format: "%@%@%@%@%@%@%@",
 			// Street Number
 			selectedItem.subThoroughfare ?? "",
@@ -65,10 +43,32 @@ class LocationSearchTable: UITableViewController {
 		)
 		return addressLine
 	}
+	
+	// MARK: - Table View
+	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return matchingItems.count
+	}
+	
+	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
+		let selectedItem = matchingItems[indexPath.row].placemark
+		
+		cell.textLabel?.text = selectedItem.name
+		cell.detailTextLabel?.text = parseAddress(selectedItem)
+		
+		return cell
+	}
+	
+	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		let selectedItem = matchingItems[indexPath.row].placemark
+		handleMapSearchDelegate?.dropPinZoomIn(selectedItem)
+		dismissViewControllerAnimated(true, completion: nil)
+	}
 }
 
-// MARK: - UISearchSesultsUpdating
+// MARK: - Search Sesults Updating
 extension LocationSearchTable: UISearchResultsUpdating {
+	
 	func updateSearchResultsForSearchController(searchController: UISearchController) {
 		guard let mapView = mapView,
 			let searchBarText = searchController.searchBar.text else { return }
