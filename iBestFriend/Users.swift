@@ -93,17 +93,7 @@ public class Users {
 		}
 	}
 	
-	//MARK: - Guest Authentication
-	static func guestLogin() {
-		FirebaseRefs.rootRef.authAnonymouslyWithCompletionBlock { error, authData in
-			
-			if error != nil {
-				print("Error loging in as guest \(error)")
-			} else {
-				print("Guest login success. \(authData)")
-			}
-		}
-	}
+
 	
 	//MARK: - Logout
 	static func logOut() {

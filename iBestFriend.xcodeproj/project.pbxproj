@@ -21,6 +21,7 @@
 		34B00EF01C881751007918CE /* iBestFriendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00EEF1C881751007918CE /* iBestFriendUITests.swift */; };
 		34B00F021C881DB1007918CE /* PlaceListTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00F011C881DB1007918CE /* PlaceListTable.swift */; };
 		34B00F041C881EA3007918CE /* PlaceListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00F031C881EA3007918CE /* PlaceListTableCell.swift */; };
+		34C2614A1C9FB13A00DBD1E1 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C261491C9FB13A00DBD1E1 /* NewUser.swift */; };
 		34CC00B91C95FC44003A1C4C /* FirebaseRefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC00B81C95FC44003A1C4C /* FirebaseRefs.swift */; };
 		34CC00BB1C96002F003A1C4C /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC00BA1C96002F003A1C4C /* Users.swift */; };
 		34D94EA01C9520E700AF905A /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D94E9F1C9520E700AF905A /* AccountSettings.swift */; };
@@ -75,6 +76,7 @@
 		34B00EF11C881751007918CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34B00F011C881DB1007918CE /* PlaceListTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListTable.swift; sourceTree = "<group>"; };
 		34B00F031C881EA3007918CE /* PlaceListTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListTableCell.swift; sourceTree = "<group>"; };
+		34C261491C9FB13A00DBD1E1 /* NewUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		34CC00B81C95FC44003A1C4C /* FirebaseRefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseRefs.swift; sourceTree = "<group>"; };
 		34CC00BA1C96002F003A1C4C /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		34D94E9F1C9520E700AF905A /* AccountSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				34D94EA31C9521E700AF905A /* Cells */,
 				34B00ECE1C881751007918CE /* Login.swift */,
 				340BA0B51C9DF1A000150C9B /* SignUp.swift */,
+				34C261491C9FB13A00DBD1E1 /* NewUser.swift */,
 				34B00F011C881DB1007918CE /* PlaceListTable.swift */,
 				34E7A6911C8BAA79009F68F5 /* PlaceMap.swift */,
 				341CFBE21C99234300F3A76A /* LocationSearchTable.swift */,
@@ -448,6 +451,7 @@
 				34B00ECD1C881751007918CE /* AppDelegate.swift in Sources */,
 				34CC00BB1C96002F003A1C4C /* Users.swift in Sources */,
 				34B00F021C881DB1007918CE /* PlaceListTable.swift in Sources */,
+				34C2614A1C9FB13A00DBD1E1 /* NewUser.swift in Sources */,
 				34E7A6921C8BAA79009F68F5 /* PlaceMap.swift in Sources */,
 				341CFBE31C99234300F3A76A /* LocationSearchTable.swift in Sources */,
 				34D94EA71C95222400AF905A /* AccountSettingsTableCell.swift in Sources */,

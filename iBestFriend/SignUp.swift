@@ -16,7 +16,8 @@ class SignUp: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var secondPasswordTextField: UITextField!
 	@IBOutlet weak var securityAnswerTextField: UITextField!
 	@IBOutlet weak var securityQuestionPickerView: UIPickerView!
-	@IBOutlet weak var newUserSignIn: UIButton!
+	
+	@IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
 
 	let securityQuestions: [String] = ["What was your first pet's name?", "What is your favorite animal?", "How many pet's do you own?", "What was your first pet?", "Who is your vet?"]
 	var usersSecurityQuestion: String = ""
@@ -26,6 +27,30 @@ class SignUp: UIViewController, UITextFieldDelegate {
 		
 		securityQuestionPickerView.dataSource = self
 		securityQuestionPickerView.delegate = self
+		
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+	}
+	
+	override func viewDidDisappear(animated: Bool) {
+		NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+		NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+	}
+	
+	func keyboardWillShow(notification: NSNotification) {
+		let userInfo: [NSObject: AnyObject] = notification.userInfo!
+		let keyboardFrame: CGRect = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+		
+		UIView.animateWithDuration(0.1, animations: { () -> Void in
+			self.scrollViewBottomConstraint.constant = keyboardFrame.size.height + 20
+		})
+	}
+
+	func keyboardWillHide(sender: NSNotification) {
+		let userInfo: [NSObject: AnyObject] = sender.userInfo!
+		let keyboardSize: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue.size
+		
+		self.view.frame.origin.y += keyboardSize.height
 	}
 	
 	// MARK: - Actions
@@ -38,7 +63,7 @@ class SignUp: UIViewController, UITextFieldDelegate {
 		
 		Users.createUserWithEmail(newEmailTextField.text!, password: newPasswordTextField.text!)
 		
-		performSegueWithIdentifier("SignUpToLogin", sender: self)
+		performSegueWithIdentifier("SignUpComplete", sender: self)
 	}
 
 }
