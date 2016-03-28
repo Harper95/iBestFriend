@@ -14,7 +14,6 @@
 		34421B411CA85B7C00A7D300 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34421B401CA85B7C00A7D300 /* Pet.swift */; };
 		3453751C1C93DDC5001A0E23 /* ReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3453751B1C93DDC5001A0E23 /* ReviewVC.swift */; };
 		3457FB5D1C9E7580006D8BDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3457FB5B1C9E7580006D8BDC /* Main.storyboard */; };
-		346E46B81CA7A4EE007B3A68 /* PracticeMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346E46B71CA7A4EE007B3A68 /* PracticeMapVC.swift */; };
 		34B00ECD1C881751007918CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00ECC1C881751007918CE /* AppDelegate.swift */; };
 		34B00ECF1C881751007918CE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B00ECE1C881751007918CE /* LoginVC.swift */; };
 		34B00EDA1C881751007918CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B00ED81C881751007918CE /* LaunchScreen.storyboard */; };
@@ -64,7 +63,6 @@
 		34421B401CA85B7C00A7D300 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		3453751B1C93DDC5001A0E23 /* ReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewVC.swift; sourceTree = "<group>"; };
 		3457FB5C1C9E7580006D8BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		346E46B71CA7A4EE007B3A68 /* PracticeMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeMapVC.swift; sourceTree = "<group>"; };
 		34B00EC91C881751007918CE /* iBestFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBestFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B00ECC1C881751007918CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34B00ECE1C881751007918CE /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				34D94E9F1C9520E700AF905A /* AccountSettingsVC.swift */,
 				34D94EA11C95217900AF905A /* FavoritesVC.swift */,
 				3453751B1C93DDC5001A0E23 /* ReviewVC.swift */,
-				346E46B71CA7A4EE007B3A68 /* PracticeMapVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -443,7 +440,6 @@
 			files = (
 				34EA23221C89006700EB3FBE /* PlaceInfoVC.swift in Sources */,
 				34B00F041C881EA3007918CE /* PlaceListTableCell.swift in Sources */,
-				346E46B81CA7A4EE007B3A68 /* PracticeMapVC.swift in Sources */,
 				34421B411CA85B7C00A7D300 /* Pet.swift in Sources */,
 				34CC00B91C95FC44003A1C4C /* FirebaseRefs.swift in Sources */,
 				3453751C1C93DDC5001A0E23 /* ReviewVC.swift in Sources */,

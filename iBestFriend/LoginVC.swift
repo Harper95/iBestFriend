@@ -43,7 +43,7 @@ class LoginVC: UIViewController {
 			if error != nil {
 				self.invalidEmailPasswordStackView.hidden = false
 				self.passwordTextField.text! = ""
-				print("There was an error logging in user. Error: \(error)")
+				print("There was an error logging in user with email. Error: \(error)")
 			} else {
 				print("User successfully logged in")
 			}
@@ -55,7 +55,7 @@ class LoginVC: UIViewController {
 		facebookLogin.logInWithReadPermissions(["email"], fromViewController: nil) { facebookResult, facebookError in
 			
 			if facebookError != nil {
-				print("Facebook login failed. Error: \(facebookError)")
+				print("Facebook login failed. FBError: \(facebookError)")
 			} else if facebookResult.isCancelled {
 				print("Facebook login was cancelled")
 			} else {

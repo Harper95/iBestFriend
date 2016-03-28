@@ -52,23 +52,22 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
 	}
 
 	func keyboardWillHide(sender: NSNotification) {
-		let userInfo: [NSObject: AnyObject] = sender.userInfo!
-		let keyboardSize: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue.size
-		
-		self.view.frame.origin.y += keyboardSize.height
+		scrollViewBottomConstraint.constant = 0
 	}
 	
 	func userCompletedForm() -> Bool {
-		if newPasswordTextField.text!.characters.count < 8 && newPasswordTextField.text != secondPasswordTextField.text {
+		if newPasswordTextField.text!.characters.count < 8 {
 			newPasswordLabel.textColor = UIColor.redColor()
+			return false
+		} else if newPasswordTextField.text != secondPasswordTextField.text {
 			secondPasswordLabel.textColor = UIColor.redColor()
 			return false
-		}
-		if securityAnswerTextField.text!.isEmpty {
+		} else if securityAnswerTextField.text!.isEmpty {
 			securityAnswerLabel.textColor = UIColor.redColor()
 			return false
+		} else {
+			return true
 		}
-		return true
 	}
 	
 	// MARK: - Actions
@@ -82,9 +81,9 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
 				} else {
 					let uid = result["uid"] as? String
 					print("Successfully created user account with uid: \(uid)")
+					self.performSegueWithIdentifier("SignUpComplete", sender: nil)
 				}
 			}
-			performSegueWithIdentifier("SignUpComplete", sender: nil)
 		}
 	}
 

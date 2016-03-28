@@ -9,56 +9,46 @@
 import UIKit
 import MapKit
 
-protocol HandleMapSearch {
-	func dropPinZoomIn(placeMark: MKPlacemark)
-}
-
 class PlaceMapVC: UIViewController {
 	
 	// MARK: - Outlets
 	@IBOutlet weak var mapView: MKMapView!
 	
 	// MARK: - Properties
+	var user = Users()
 	let locationManager = CLLocationManager()
-	var resultSearchController: UISearchController? = nil
 	var selectedPin: MKPlacemark? = nil
-	
 	var matchingParks = [MKMapItem]()
 	
 	override func viewWillAppear(animated: Bool) {
-		navigationItem.setHidesBackButton(true, animated: false)
+//		navigationItem.setHidesBackButton(true, animated: false)
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		locationManager.delegate = self
-		locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+		locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
 		locationManager.requestWhenInUseAuthorization()
 		locationManager.requestLocation()
+	}
+	
+	func populateParks() {
+		guard let mapView = mapView else { return }
 		
-		let locationSearchTable = storyboard!.instantiateViewControllerWithIdentifier("LocationSearchTable") as! LocationSearchTable
-		resultSearchController = UISearchController(searchResultsController: locationSearchTable)
-		resultSearchController?.searchResultsUpdater = locationSearchTable
+		let request = MKLocalSearchRequest()
+		request.naturalLanguageQuery = "Dog Park"
+		request.region = mapView.region
 		
-		// Configure the search bar and embed it within the navigation bar
-		let searchBar = resultSearchController!.searchBar
-		searchBar.sizeToFit()
-		searchBar.placeholder = "Search by city"
-		navigationItem.titleView = resultSearchController!.searchBar
-		
-		// Configure the UISearchController Appearance
-		resultSearchController?.hidesNavigationBarDuringPresentation = false
-		resultSearchController?.dimsBackgroundDuringPresentation = true
-		definesPresentationContext = true
-		
-		locationSearchTable.mapView = mapView
-		
-		locationSearchTable.handleMapSearchDelegate = self
+		let search = MKLocalSearch(request: request)
+		search.startWithCompletionHandler { response, error in
+			guard let response = response else { return }
+			self.matchingParks = response.mapItems
+		}
 	}
 	
 	func getInformation() {
-		storyboard!.instantiateViewControllerWithIdentifier("PlaceInfoVC")
+		performSegueWithIdentifier("MapToInfo", sender: nil)
 	}
 	
 	func getDirections() {
@@ -69,6 +59,20 @@ class PlaceMapVC: UIViewController {
 		}
 	}
 	
+	@IBAction func pinDropButtonTouched(sender: AnyObject) {
+		print(matchingParks)
+		for park in matchingParks {
+			let annotion = MKPointAnnotation()
+			annotion.coordinate = park.placemark.coordinate
+			annotion.title = park.name
+			
+			if let city = park.placemark.locality,
+				let state = park.placemark.administrativeArea {
+				annotion.subtitle = "\(city) \(state)"
+			}
+			mapView.addAnnotation(annotion)
+		}
+	}
 }
 // MARK: - Location Manager Delegate
 extension PlaceMapVC: CLLocationManagerDelegate {
@@ -80,16 +84,15 @@ extension PlaceMapVC: CLLocationManagerDelegate {
 	}
 	
 	func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		if let location = locations.first {												// Grab the first location in the array
-			let span = MKCoordinateSpanMake(0.1, 0.1)									// Zoom level 0.05 longitude and latitude
-			let region = MKCoordinateRegion(center: location.coordinate, span: span)	// The point of intrest and how far to zoom in
-			
-			mapView.setRegion(region, animated: true)									// Zoom to the region
+		if let location = locations.first {
+			let region = MKCoordinateRegion(center: location.coordinate, span: user.span)
+			mapView.setRegion(region, animated: true)
+			populateParks()
 		}
 	}
 	
 	func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-		print("error: \(error)")
+		print("location manager error: \(error)")
 	}
 	
 }
@@ -98,7 +101,6 @@ extension PlaceMapVC: MKMapViewDelegate {
 	
 	func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
 		if annotation is MKUserLocation {
-			// Return nil so map view draws "blue dot" for standard user location
 			return nil
 		}
 		
