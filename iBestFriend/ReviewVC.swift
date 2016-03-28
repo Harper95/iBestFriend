@@ -1,5 +1,5 @@
 //
-//  Review.swift
+//  ReviewVC.swift
 //  iBestFriend
 //
 //  Created by Clayton Harper on 3/11/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Review: UIViewController {
+class ReviewVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,5 +1,5 @@
 //
-//  NewUser.swift
+//  NewUserVC.swift
 //  iBestFriend
 //
 //  Created by Clayton Harper on 3/20/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewUser: UIViewController {
+class NewUserVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

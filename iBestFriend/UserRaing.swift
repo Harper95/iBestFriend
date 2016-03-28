@@ -36,7 +36,7 @@ class UserRating: UIView {
 			
 			pawRatingButton.adjustsImageWhenHighlighted = false
 			
-			pawRatingButton.addTarget(self, action: "pawRatingTapped:", forControlEvents: .TouchDown)
+			pawRatingButton.addTarget(self, action: #selector(UserRating.pawRatingTapped(_:)), forControlEvents: .TouchDown)
 			pawButtons += [pawRatingButton]
 			addSubview(pawRatingButton)
 		}

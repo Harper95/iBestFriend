@@ -1,5 +1,5 @@
 //
-//  Login.swift
+//  LoginVC.swift
 //  iBestFriend
 //
 //  Created by Clayton Harper on 3/2/16.
@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 
-class Login: UIViewController {
+class LoginVC: UIViewController {
 	
 	// MARK: - Outlets
 	@IBOutlet weak var usernameTextField: UITextField!
@@ -27,9 +27,10 @@ class Login: UIViewController {
 		super.viewWillAppear(animated)
 		
 		FirebaseRefs.rootRef.observeAuthEventWithBlock { (authData) -> Void in
-			if authData.provider == "anonymous" { return }
 			
 			if authData != nil{
+				if authData.provider == "anonymous" { return }
+
 				self.performSegueWithIdentifier("LoginToList", sender: nil)
 				print("Auto Logged in \(authData.uid)")
 			}
@@ -38,7 +39,6 @@ class Login: UIViewController {
 	
 	// MARK: - Actions
 	@IBAction func loginButtonTouched(sender: AnyObject) {
-		
 		FirebaseRefs.rootRef.authUser(usernameTextField.text!, password: passwordTextField.text!) { error, authData in
 			if error != nil {
 				self.invalidEmailPasswordStackView.hidden = false
@@ -50,10 +50,29 @@ class Login: UIViewController {
 		}
 	}
 	@IBAction func facebookLoginTouched(sender: AnyObject) {
-		Users.loginWithFacebook()
+		let facebookLogin = FBSDKLoginManager()
+		
+		facebookLogin.logInWithReadPermissions(["email"], fromViewController: nil) { facebookResult, facebookError in
+			
+			if facebookError != nil {
+				print("Facebook login failed. Error: \(facebookError)")
+			} else if facebookResult.isCancelled {
+				print("Facebook login was cancelled")
+			} else {
+				let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+				
+				FirebaseRefs.rootRef.authWithOAuthProvider("facebook", token: accessToken) { error, authData in
+					
+					if error != nil {
+						print("Facebook login failed. \(error)")
+					} else {
+						print("Facebook login success. \(authData)")
+					}
+				}
+			}
+		}
 	}
 	@IBAction func guestButtonTouched(sender: AnyObject) {
-		
 		FirebaseRefs.rootRef.authAnonymouslyWithCompletionBlock { error, authData in
 			if error != nil {
 				print("Error loging in as guest \(error)")
@@ -64,7 +83,7 @@ class Login: UIViewController {
 		}
 	}
 	@IBAction func forgotPasswordButtonTouched(sender: AnyObject) {
-		Users.resetPasswordByEmail(usernameTextField.text!)
+		
 	}
 
 }

@@ -1,20 +1,26 @@
 //
-//  AccountInfo.swift
+//  FavoritesVC.swift
 //  iBestFriend
 //
-//  Created by Clayton Harper on 3/3/16.
+//  Created by Clayton Harper on 3/12/16.
 //  Copyright © 2016 Clayton Harper. All rights reserved.
 //
 
 import UIKit
 
-class AccountInfo: UIViewController {
+class FavoritesVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
 
     /*
     // MARK: - Navigation

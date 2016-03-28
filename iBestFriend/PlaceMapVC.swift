@@ -1,5 +1,5 @@
 //
-//  PlaceMap.swift
+//  PlaceMapVC.swift
 //  iBestFriend
 //
 //  Created by Clayton Harper on 3/5/16.
@@ -13,7 +13,7 @@ protocol HandleMapSearch {
 	func dropPinZoomIn(placeMark: MKPlacemark)
 }
 
-class PlaceMap: UIViewController {
+class PlaceMapVC: UIViewController {
 	
 	// MARK: - Outlets
 	@IBOutlet weak var mapView: MKMapView!
@@ -58,7 +58,7 @@ class PlaceMap: UIViewController {
 	}
 	
 	func getInformation() {
-		storyboard!.instantiateViewControllerWithIdentifier("PlaceInfo")
+		storyboard!.instantiateViewControllerWithIdentifier("PlaceInfoVC")
 	}
 	
 	func getDirections() {
@@ -71,7 +71,7 @@ class PlaceMap: UIViewController {
 	
 }
 // MARK: - Location Manager Delegate
-extension PlaceMap: CLLocationManagerDelegate {
+extension PlaceMapVC: CLLocationManagerDelegate {
 	
 	func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
 		if status == .AuthorizedWhenInUse {
@@ -94,7 +94,7 @@ extension PlaceMap: CLLocationManagerDelegate {
 	
 }
 // MARK: - Map View Delegate
-extension PlaceMap: MKMapViewDelegate {
+extension PlaceMapVC: MKMapViewDelegate {
 	
 	func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
 		if annotation is MKUserLocation {
@@ -111,38 +111,15 @@ extension PlaceMap: MKMapViewDelegate {
 		let smallSquare = CGSize(width: 30, height: 30)
 		let rightButton = UIButton(frame: CGRect(origin: CGPointZero, size: smallSquare))
 		rightButton.setImage(UIImage(named: "info"), forState: .Normal)
-		rightButton.addTarget(self, action: "getInformation", forControlEvents: .TouchUpInside)
+		rightButton.addTarget(self, action: #selector(PlaceMapVC.getInformation), forControlEvents: .TouchUpInside)
 		pinView?.rightCalloutAccessoryView = rightButton
 		
 		let leftButton = UIButton(frame: CGRect(origin: CGPointZero, size: smallSquare))
 		leftButton.setImage(UIImage(named: "car"), forState: .Normal)
-		leftButton.addTarget(self, action: "getDirections", forControlEvents: .TouchUpInside)
+		leftButton.addTarget(self, action: #selector(PlaceMapVC.getDirections), forControlEvents: .TouchUpInside)
 		pinView?.leftCalloutAccessoryView = leftButton
 		
 		return pinView
-	}
-	
-}
-// MARK: - Handle Map Search Protocol
-extension PlaceMap: HandleMapSearch {
-	
-	func dropPinZoomIn(placeMark: MKPlacemark) {
-		selectedPin = placeMark
-		mapView.removeAnnotations(mapView.annotations)
-
-		let annotion = MKPointAnnotation()
-		annotion.coordinate = placeMark.coordinate
-		annotion.title = placeMark.name
-		
-		if let city = placeMark.locality,
-			let state = placeMark.administrativeArea {
-				annotion.subtitle = "\(city) \(state)"
-		}
-		mapView.addAnnotation(annotion)
-		
-		let span = MKCoordinateSpanMake(0.05, 0.05)
-		let region = MKCoordinateRegionMake(placeMark.coordinate, span)
-		mapView.setRegion(region, animated: true)
 	}
 	
 }

@@ -1,5 +1,5 @@
 //
-//  PlaceInfo.swift
+//  PlaceInfoVC.swift
 //  iBestFriend
 //
 //  Created by Clayton Harper on 3/3/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlaceInfo: UIViewController {
+class PlaceInfoVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
